@@ -10,7 +10,7 @@ public interface CategoryService {
 
     public List<Category> save();
 
-    public void updateById(Integer pId, String pTitle, String pContent);
+    public void updateById(Integer pId, String pCategoryName, String pDescription);
 
-    public void deleteById(Integer pId);
+    public void delete(Integer pId);
 }

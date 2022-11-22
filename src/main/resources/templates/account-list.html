@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>List Account</title>
+    <style>
+        td {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<h1>List Account</h1>
+
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Full name</td>
+        <td>Username</td>
+        <td>Email</td>
+        <td></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="obj : ${listAccount}">
+        <td th:text="${obj.id}">Id</td>
+        <td th:text="${obj.fullName}">Full name</td>
+        <td th:text="${obj.username}">Username</td>
+        <td th:text="${obj.email}">Email</td>
+        <td><a th:href="${'/account/delete/' + obj.id}">Delete</a></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

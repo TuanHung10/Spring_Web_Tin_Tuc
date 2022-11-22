@@ -4,8 +4,11 @@ package com.tn.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table
@@ -18,13 +21,10 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String title;
+    private String categoryName;
 
-    private String content;
+    private String description;
 
-    private String createdDate;
-
-    private String updatedDate;
-
-    private String image;
+    @OneToMany(mappedBy = "category")
+    private List<Article> articles;
 }

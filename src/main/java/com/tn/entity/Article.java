@@ -3,8 +3,10 @@ package com.tn.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table
@@ -16,8 +18,22 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String categoryName;
+    private String title;
 
-    private String description;
+    private String content;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    private Date createdDate;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    private Date updatedDate;
+
+    private String image;
+
+    @ManyToOne
+    @JoinColumn(name = "categoryid")
+    private Category category;
 
 }

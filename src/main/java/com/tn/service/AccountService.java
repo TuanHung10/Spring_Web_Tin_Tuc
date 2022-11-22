@@ -10,7 +10,7 @@ public interface AccountService {
 
     public List<Account> save();
 
-    public void updateById(Integer pId, String fullName, String pDescription);
+    public void updateById(Integer pId, String pFullName, String pEmail);
 
-    public void deleteById(Integer pId);
+    public void delete(Integer pId);
 }

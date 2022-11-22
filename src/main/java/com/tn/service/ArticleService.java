@@ -11,7 +11,7 @@ public interface ArticleService {
 
     public List<Article> save();
 
-    public void updateById(Integer pId, String pCategoryName, String pDescription);
+    public void updateById(Integer pId, String pTitle, String pContent, String pImage);
 
-    public void deleteById(Integer pId);
+    public void delete(Integer pId);
 }
